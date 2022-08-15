@@ -1,0 +1,97 @@
+Partições
+
+    - Mostrar os discos no sistema
+    # lsblk
+        ou
+    # fdisk -l
+    
+    
+    - Particionar disco
+    # fdisk /dev/sdx
+    .
+    .
+    .
+    Command (m for help): n                        /* É exibido os tipos de comando e "n" cria nova partição */
+    .
+    .
+    Select (default p): p                          /* "p" para partição primária e "e" para extendida */
+    Partition number (1-4, default 1): 1           /* Número da partição */
+    First sector (2048-max, default 2048):         /* Enter, diz onde a memória começa */
+    Last sector, +/-sectors or +/-size{K, M, G, T, P} (2048-max, default max):        /* Enter para tamanho máximo */ 
+    .
+    .
+    Command (m for help): w                        /* "w" para escrever mudanças em discos */
+    
+    
+    * agora tem que formatar essa partição
+    
+    # mkfs.ext4 /dev/sdx
+    .
+    .
+    Proceed anyway? (y/N) y
+    
+    
+    
+
+
+
+
+
+Montando e desmontando
+    
+    # cd /mnt/
+    # mkdir disco2
+    # mount /dev/sdx /mnt/disco2
+    # cd disco2
+    
+    * agora toda mudança aqui será uma mudança no disco
+    
+    Desmonte
+    
+    # umount /dev/sdx
+    
+    
+    
+    
+    
+    
+Montando Automáticamente
+    
+    # nano /etc/fstab
+    
+    * Adicione esta nova linha ao final do arquivo:
+    
+    /dev/sdx /mnt/disco2 ext4 defaults 0 0
+    
+    * Disco, local de montagem, sistema de disco, defaults 0 0
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

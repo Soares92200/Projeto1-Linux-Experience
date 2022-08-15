@@ -1,0 +1,99 @@
+Manipulação de arquivos
+
+
+
+
+Copiando arquivos
+
+    # cp /home/soares/*.txt /mnt/disco2/ -i -r -v
+    
+    * Copia aquivos txt para disco2
+    * -i para interação... O prompt vai perguntar se deve continuar.
+    * -r para recursivo, ou seja, vai copiar até pastas e o que tiver dentro delas.
+    * -v, modo verboso, para dá detalhes do que está fazendo.
+    
+    ** CUIDADO, arquivos de mesmo nome são sobrepostos
+    
+    
+    
+Renomeando e movendo arquivos
+    
+    # mv /home/soares/planilha.xlsx /mnt/disco2/
+    
+    OBS.1: Se colocar um nome diferente, o arquivo é movido com um nome diferente; 
+    OBS.2: Não faz o modo recursivo, só pode copiar diretório vazio;
+    OBS.3: Para renomer a origem e o destino devem ser iguais com nomes diferentes.
+    
+    ** CUIDADO, arquivos de mesmo nome são sobrepostos
+  
+  
+   
+   
+  
+  
+  
+   
+Iniciando, visualizando e encerrando um processo
+
+
+
+
+- Visualizando
+
+    * ps sozinho mostra apenas processos do terminal e do usuário em questão.
+    
+    $ ps aux
+    
+    * a mostra processos de todos os usuários;
+    * u mostra o nome do usuário e o horário do processo;
+    * x mostra os processos em execução.
+    
+- Matando
+
+    Por id do processo   
+    $ kill 12862
+    
+    * O id só verse se for o processo da janela do aplicativo
+    
+    
+    Por nome de aplicativo aberto
+    $ killall chrome
+    
+    
+   
+    # w
+    * Mostra os usuários em login eo horário de login
+    
+    # who
+    * Também mostra usuário, mas com um PIN para poder derrubar o acesso com o kill
+
+    
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    
+    
+    
+   
+   
+   
+   
+   
+   
+   
+   
+    

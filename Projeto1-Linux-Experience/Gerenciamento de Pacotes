@@ -1,0 +1,78 @@
+Gerenciamento de Pacotes Debian
+
+
+
+    Lista de disponíveis para baixar
+    
+    # apt list
+    
+    
+    Listar pacotes instalados
+    
+    # apt list installed
+    
+    
+    Lista dos pacotes com atualização disponível
+    
+    # apt list --upgradeable
+    
+    
+    Download  de arquivo
+    
+    # wget https://link
+    
+    
+    Descompactar zip              Descompactar rar
+    
+    # unzip arquivo.zip           # unrar arquivo.rar
+    
+    
+    Verificar se tem atualizações            Atualizar
+    
+    # apt update                             # apt upgrade -y
+
+
+
+
+
+
+Gerenciamento de Pacotes Red Hat
+
+
+
+    dnf ou yum
+    
+    Pesquisa                          Instalação                        Atualização
+    
+    # dnf search pacote               # dnf install pacote -y           # dnf update -y
+
+
+
+
+
+
+
+Instalação com DEB
+
+    # apt install ./aquivo.deb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

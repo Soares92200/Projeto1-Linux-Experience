@@ -1,0 +1,200 @@
+Criando usuários no servidor
+
+
+- Criar usuário
+
+ # useradd novo_usuario -m -c "Nome do usuario" -s /bin/bash
+ 
+ * (useradd nome) cria novo usuário;
+ * (-m) parámetro para adicionar uma pasta pessoal para novo usuário;
+ * (-c "Nome do usuario") É o nome do usuário no login;
+ * (-s /bin/bash) dá acesso ao bash.
+
+
+
+- Deletar usuário
+
+ # userdel -r -f novo_usuario 
+ 
+ * (userdel) apaga usuário;
+ * (-r) remove pasta pessoal;
+ * (-f) força a deleção... mesmo que esteja logado.
+
+
+
+- Adciona um shell para uma conta com chsh /* change shell */
+
+ # chsh -s /bin/bash novo_usuario
+
+
+
+- Dá senha para um usuário
+
+ # passwd novo_usuario
+
+
+
+- Entrar com novo_usuario
+
+ # su novo_usuario
+
+
+
+
+
+
+
+
+
+Usuário Temporário
+
+
+ # useradd usuario_temporario -c "Convidado" -m -e 26/06/2022
+ 
+ * (-e data) Criar usuário temporário.
+ 
+ 
+ 
+- Modifica usuário
+
+ # usermod usuario_temporario -s /bin/bash
+ 
+ * dando acesso ao shell... usermod faz alteração no usuário.
+
+
+
+ # passwd usuario_temporario -e 
+ 
+ * Força o usuário a mudar de senha imediatamente... Se colocar a data, a senha será temporária.
+
+
+
+Ver usuários do sistema
+
+ # cat /etc/passwd
+
+
+
+
+
+
+
+
+
+Criando usuários em lote
+
+
+- Com senha
+ 
+ # useradd novo_usuario -m -c "Nome do usuario" -s /bin/bash -p $(openssl passwd -crypt Senha123)
+ 
+ * (-p $(openssl passwd -crypt Senha123)) adiciona senha encriptada.
+
+
+
+- Modificar prioridade do arquivo para fazer execução
+ 
+ # chmod +x criarUser.sh
+
+
+
+
+
+
+
+
+
+- Ver grupos
+ # cat /etc/group
+ 
+- Modificar grupo de usuário
+ # usermod -G adm,sudo usuario_teste
+ 
+ * É apagado de outros grupos e fica apenas nos listados;
+ * reinicie depois disso.
+ 
+ 
+
+
+
+
+
+
+
+
+Criar grupo
+
+
+ - criar
+ # groupadd new_group
+ 
+ - remover
+ # groupdel new_group
+ 
+ - criar usuário com um grupo
+ # useradd novo_usuario -m -c "Nome do usuario" -s /bin/bash -p $(openssl passwd -crypt Senha123) -G new_group
+ 
+ - rempvver usuário de um grupo
+ # gpasswd -d usuario_teste new_group
+ 
+ 
+
+ 
+
+
+
+
+
+Permissões
+
+ - modificar dono e grupo de um diretório
+ # chown novo_dono:new_group /diretorio/
+
+
+
+
+
+
+
+
+Mudança de permissão
+
+
+        * drwxr-xr-x
+            
+            d -> diretório
+            r -> leitura  4
+            w -> gravação 2
+            x -> execução 1
+            
+            1º trio  2º trio   3º trio
+             dono    usuários   outros
+
+    # chmod 750 /diretorio/
+    
+    * para adicionar ou remover permissão do dono, pode-se usar as síglas com mais ou com menos
+        ex.: chmod +x /diretorio/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
